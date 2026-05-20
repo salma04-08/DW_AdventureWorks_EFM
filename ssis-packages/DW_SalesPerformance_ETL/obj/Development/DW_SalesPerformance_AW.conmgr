@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="DW_SalesPerformance_AW"
+  DTS:DTSID="{7C53B75C-A499-4F60-816F-AE81C0A05AD2}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectRetryCount="1"
+      DTS:ConnectRetryInterval="5"
+      DTS:ConnectionString="Data Source=localhost;Initial Catalog=DW_SalesPerformance_AW;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-DW_SalesPerformance_ETL-{7C53B75C-A499-4F60-816F-AE81C0A05AD2}localhost.DW_SalesPerformance_AW;Auto Translate=False;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>
