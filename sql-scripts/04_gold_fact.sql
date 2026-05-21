@@ -130,3 +130,9 @@ PRINT '';
 PRINT '══════════════════════════════════════════════════════════════';
 PRINT '✓ GOLD FACT complet — FactSales chargée';
 PRINT '══════════════════════════════════════════════════════════════';
+
+SELECT COLUMN_NAME, DATA_TYPE, NUMERIC_PRECISION, NUMERIC_SCALE
+FROM INFORMATION_SCHEMA.COLUMNS
+WHERE TABLE_SCHEMA = 'gold'
+AND TABLE_NAME = 'DimProduct'
+ORDER BY ORDINAL_POSITION;
