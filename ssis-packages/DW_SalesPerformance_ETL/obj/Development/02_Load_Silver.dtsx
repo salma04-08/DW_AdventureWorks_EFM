@@ -11,8 +11,8 @@
   DTS:LocaleID="1036"
   DTS:ObjectName="02_Load_Silver"
   DTS:PackageType="5"
-  DTS:VersionBuild="7"
-  DTS:VersionGUID="{136E4B61-B90A-4AB2-9FC2-22F0D6D17952}">
+  DTS:VersionBuild="17"
+  DTS:VersionGUID="{3DE7A345-3051-4956-8A83-AE84C00C4391}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -3695,100 +3695,6 @@ JOIN bronze.Product          p   ON sod.ProductID    = p.ProductID</property>
           version="1">
           <components>
             <component
-              refId="Package\DF - CleanSalesPerson\Colonne dérivée"
-              componentClassID="Microsoft.DerivedColumn"
-              contactInfo="Colonne dérivée;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;0"
-              description="Crée de nouvelles valeurs de colonne en appliquant des expressions aux colonnes d'entrée de transformation. Créez de nouvelles colonnes ou remplacez celles qui existent déjà. Par exemple, concaténez les valeurs de la colonne 'prénom' et de la colonne 'nom' pour créer une colonne 'nom complet'."
-              name="Colonne dérivée"
-              usesDispositions="true">
-              <inputs>
-                <input
-                  refId="Package\DF - CleanSalesPerson\Colonne dérivée.Inputs[Entrée de colonne dérivée]"
-                  description="Entrée de la transformation de colonnes dérivées"
-                  name="Entrée de colonne dérivée">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\DF - CleanSalesPerson\Colonne dérivée.Inputs[Entrée de colonne dérivée].Columns[FirstName]"
-                      cachedDataType="wstr"
-                      cachedLength="50"
-                      cachedName="FirstName"
-                      lineageId="Package\DF - CleanSalesPerson\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[FirstName]" />
-                    <inputColumn
-                      refId="Package\DF - CleanSalesPerson\Colonne dérivée.Inputs[Entrée de colonne dérivée].Columns[LastName]"
-                      cachedDataType="wstr"
-                      cachedLength="50"
-                      cachedName="LastName"
-                      lineageId="Package\DF - CleanSalesPerson\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[LastName]" />
-                    <inputColumn
-                      refId="Package\DF - CleanSalesPerson\Colonne dérivée.Inputs[Entrée de colonne dérivée].Columns[MiddleName]"
-                      cachedDataType="wstr"
-                      cachedLength="50"
-                      cachedName="MiddleName"
-                      lineageId="Package\DF - CleanSalesPerson\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[MiddleName]" />
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\DF - CleanSalesPerson\Colonne dérivée.Outputs[Sortie de colonne dérivée]"
-                  description="Sortie par défaut de la transformation de colonnes dérivées"
-                  exclusionGroup="1"
-                  name="Sortie de colonne dérivée"
-                  synchronousInputId="Package\DF - CleanSalesPerson\Colonne dérivée.Inputs[Entrée de colonne dérivée]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\DF - CleanSalesPerson\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[FullNam]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Calcul"
-                      errorRowDisposition="FailComponent"
-                      length="152"
-                      lineageId="Package\DF - CleanSalesPerson\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[FullNam]"
-                      name="FullNam"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Expression de colonne dérivée"
-                          name="Expression">[TRIM](#{Package\DF - CleanSalesPerson\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[FirstName]} + " " + ([ISNULL](#{Package\DF - CleanSalesPerson\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[MiddleName]}) ? "" : #{Package\DF - CleanSalesPerson\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[MiddleName]} + " ") + #{Package\DF - CleanSalesPerson\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[LastName]})</property>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Expression claire de colonne dérivée"
-                          expressionType="Notify"
-                          name="FriendlyExpression">TRIM(FirstName + " " + (ISNULL(MiddleName) ? "" : MiddleName + " ") + LastName)</property>
-                      </properties>
-                    </outputColumn>
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\DF - CleanSalesPerson\Colonne dérivée.Outputs[Sortie d'erreur de colonne dérivée]"
-                  description="Sortie d'erreur de la transformation de colonnes dérivées"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="Sortie d'erreur de colonne dérivée"
-                  synchronousInputId="Package\DF - CleanSalesPerson\Colonne dérivée.Inputs[Entrée de colonne dérivée]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\DF - CleanSalesPerson\Colonne dérivée.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\DF - CleanSalesPerson\Colonne dérivée.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\DF - CleanSalesPerson\Colonne dérivée.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\DF - CleanSalesPerson\Colonne dérivée.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
               refId="Package\DF - CleanSalesPerson\Destination OLE DB"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="Destination OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;4"
@@ -3867,9 +3773,18 @@ JOIN bronze.Product          p   ON sod.ProductID    = p.ProductID</property>
                       externalMetadataColumnId="Package\DF - CleanSalesPerson\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[SalesPersonID]"
                       lineageId="Package\DF - CleanSalesPerson\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[SalesPersonID]" />
                     <inputColumn
+                      refId="Package\DF - CleanSalesPerson\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[FullName]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="150"
+                      cachedName="FullName"
+                      externalMetadataColumnId="Package\DF - CleanSalesPerson\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[FullName]"
+                      lineageId="Package\DF - CleanSalesPerson\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[FullName]" />
+                    <inputColumn
                       refId="Package\DF - CleanSalesPerson\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[JobTitle]"
-                      cachedDataType="wstr"
-                      cachedLength="50"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
                       cachedName="JobTitle"
                       externalMetadataColumnId="Package\DF - CleanSalesPerson\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[JobTitle]"
                       lineageId="Package\DF - CleanSalesPerson\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[JobTitle]" />
@@ -3881,26 +3796,34 @@ JOIN bronze.Product          p   ON sod.ProductID    = p.ProductID</property>
                       lineageId="Package\DF - CleanSalesPerson\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[HireDate]" />
                     <inputColumn
                       refId="Package\DF - CleanSalesPerson\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[SalesQuota]"
-                      cachedDataType="cy"
+                      cachedDataType="numeric"
                       cachedName="SalesQuota"
+                      cachedPrecision="18"
+                      cachedScale="2"
                       externalMetadataColumnId="Package\DF - CleanSalesPerson\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[SalesQuota]"
                       lineageId="Package\DF - CleanSalesPerson\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[SalesQuota]" />
                     <inputColumn
                       refId="Package\DF - CleanSalesPerson\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[CommissionPct]"
-                      cachedDataType="cy"
+                      cachedDataType="numeric"
                       cachedName="CommissionPct"
+                      cachedPrecision="5"
+                      cachedScale="4"
                       externalMetadataColumnId="Package\DF - CleanSalesPerson\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[CommissionPct]"
                       lineageId="Package\DF - CleanSalesPerson\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[CommissionPct]" />
                     <inputColumn
                       refId="Package\DF - CleanSalesPerson\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[SalesYTD]"
-                      cachedDataType="cy"
+                      cachedDataType="numeric"
                       cachedName="SalesYTD"
+                      cachedPrecision="18"
+                      cachedScale="2"
                       externalMetadataColumnId="Package\DF - CleanSalesPerson\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[SalesYTD]"
                       lineageId="Package\DF - CleanSalesPerson\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[SalesYTD]" />
                     <inputColumn
                       refId="Package\DF - CleanSalesPerson\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[SalesLastYear]"
-                      cachedDataType="cy"
+                      cachedDataType="numeric"
                       cachedName="SalesLastYear"
+                      cachedPrecision="18"
+                      cachedScale="2"
                       externalMetadataColumnId="Package\DF - CleanSalesPerson\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[SalesLastYear]"
                       lineageId="Package\DF - CleanSalesPerson\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[SalesLastYear]" />
                     <inputColumn
@@ -3918,13 +3841,15 @@ JOIN bronze.Product          p   ON sod.ProductID    = p.ProductID</property>
                       name="SalesPersonID" />
                     <externalMetadataColumn
                       refId="Package\DF - CleanSalesPerson\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[FullName]"
-                      dataType="wstr"
-                      length="152"
+                      codePage="1252"
+                      dataType="str"
+                      length="150"
                       name="FullName" />
                     <externalMetadataColumn
                       refId="Package\DF - CleanSalesPerson\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[JobTitle]"
-                      dataType="wstr"
-                      length="50"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
                       name="JobTitle" />
                     <externalMetadataColumn
                       refId="Package\DF - CleanSalesPerson\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[HireDate]"
@@ -3932,20 +3857,28 @@ JOIN bronze.Product          p   ON sod.ProductID    = p.ProductID</property>
                       name="HireDate" />
                     <externalMetadataColumn
                       refId="Package\DF - CleanSalesPerson\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[SalesQuota]"
-                      dataType="cy"
-                      name="SalesQuota" />
+                      dataType="numeric"
+                      name="SalesQuota"
+                      precision="18"
+                      scale="2" />
                     <externalMetadataColumn
                       refId="Package\DF - CleanSalesPerson\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[CommissionPct]"
-                      dataType="cy"
-                      name="CommissionPct" />
+                      dataType="numeric"
+                      name="CommissionPct"
+                      precision="5"
+                      scale="4" />
                     <externalMetadataColumn
                       refId="Package\DF - CleanSalesPerson\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[SalesYTD]"
-                      dataType="cy"
-                      name="SalesYTD" />
+                      dataType="numeric"
+                      name="SalesYTD"
+                      precision="18"
+                      scale="2" />
                     <externalMetadataColumn
                       refId="Package\DF - CleanSalesPerson\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[SalesLastYear]"
-                      dataType="cy"
-                      name="SalesLastYear" />
+                      dataType="numeric"
+                      name="SalesLastYear"
+                      precision="18"
+                      scale="2" />
                     <externalMetadataColumn
                       refId="Package\DF - CleanSalesPerson\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[TerritoryID]"
                       dataType="i4"
@@ -4004,16 +3937,18 @@ JOIN bronze.Product          p   ON sod.ProductID    = p.ProductID</property>
                   description="Commande SQL à exécuter."
                   name="SqlCommand"
                   UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT
-    sp.BusinessEntityID AS SalesPersonID,
-    p.FirstName,
-    p.LastName,
-    p.MiddleName,
-    e.JobTitle,
-    CAST(e.HireDate AS DATE)   AS HireDate,
-    ISNULL(sp.SalesQuota, 0)   AS SalesQuota,
-    sp.CommissionPct,
-    ROUND(sp.SalesYTD, 2)      AS SalesYTD,
-    ROUND(sp.SalesLastYear, 2) AS SalesLastYear,
+    sp.BusinessEntityID                                     AS SalesPersonID,
+    CAST(TRIM(
+        p.FirstName + ' ' +
+        ISNULL(p.MiddleName + ' ', '') +
+        p.LastName
+    ) AS VARCHAR(150))                                      AS FullName,
+    CAST(e.JobTitle AS VARCHAR(100))                        AS JobTitle,
+    CAST(e.HireDate AS DATE)                                AS HireDate,
+    CAST(ISNULL(sp.SalesQuota, 0) AS DECIMAL(18,2))        AS SalesQuota,
+    CAST(sp.CommissionPct AS DECIMAL(5,4))                  AS CommissionPct,
+    CAST(ROUND(sp.SalesYTD, 2) AS DECIMAL(18,2))           AS SalesYTD,
+    CAST(ROUND(sp.SalesLastYear, 2) AS DECIMAL(18,2))      AS SalesLastYear,
     sp.TerritoryID
 FROM bronze.SalesPerson sp
 JOIN bronze.Employee e ON sp.BusinessEntityID = e.BusinessEntityID
@@ -4063,42 +3998,24 @@ JOIN bronze.Person   p ON sp.BusinessEntityID = p.BusinessEntityID</property>
                       name="SalesPersonID"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\DF - CleanSalesPerson\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[FirstName]"
-                      dataType="wstr"
+                      refId="Package\DF - CleanSalesPerson\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[FullName]"
+                      codePage="1252"
+                      dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\DF - CleanSalesPerson\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[FirstName]"
-                      length="50"
-                      lineageId="Package\DF - CleanSalesPerson\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[FirstName]"
-                      name="FirstName"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\DF - CleanSalesPerson\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[LastName]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\DF - CleanSalesPerson\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[LastName]"
-                      length="50"
-                      lineageId="Package\DF - CleanSalesPerson\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[LastName]"
-                      name="LastName"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\DF - CleanSalesPerson\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[MiddleName]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\DF - CleanSalesPerson\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[MiddleName]"
-                      length="50"
-                      lineageId="Package\DF - CleanSalesPerson\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[MiddleName]"
-                      name="MiddleName"
+                      externalMetadataColumnId="Package\DF - CleanSalesPerson\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[FullName]"
+                      length="150"
+                      lineageId="Package\DF - CleanSalesPerson\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[FullName]"
+                      name="FullName"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\DF - CleanSalesPerson\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[JobTitle]"
-                      dataType="wstr"
+                      codePage="1252"
+                      dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\DF - CleanSalesPerson\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[JobTitle]"
-                      length="50"
+                      length="100"
                       lineageId="Package\DF - CleanSalesPerson\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[JobTitle]"
                       name="JobTitle"
                       truncationRowDisposition="FailComponent" />
@@ -4113,39 +4030,47 @@ JOIN bronze.Person   p ON sp.BusinessEntityID = p.BusinessEntityID</property>
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\DF - CleanSalesPerson\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[SalesQuota]"
-                      dataType="cy"
+                      dataType="numeric"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\DF - CleanSalesPerson\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[SalesQuota]"
                       lineageId="Package\DF - CleanSalesPerson\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[SalesQuota]"
                       name="SalesQuota"
+                      precision="18"
+                      scale="2"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\DF - CleanSalesPerson\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[CommissionPct]"
-                      dataType="cy"
+                      dataType="numeric"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\DF - CleanSalesPerson\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[CommissionPct]"
                       lineageId="Package\DF - CleanSalesPerson\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[CommissionPct]"
                       name="CommissionPct"
+                      precision="5"
+                      scale="4"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\DF - CleanSalesPerson\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[SalesYTD]"
-                      dataType="cy"
+                      dataType="numeric"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\DF - CleanSalesPerson\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[SalesYTD]"
                       lineageId="Package\DF - CleanSalesPerson\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[SalesYTD]"
                       name="SalesYTD"
+                      precision="18"
+                      scale="2"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\DF - CleanSalesPerson\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[SalesLastYear]"
-                      dataType="cy"
+                      dataType="numeric"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\DF - CleanSalesPerson\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[SalesLastYear]"
                       lineageId="Package\DF - CleanSalesPerson\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[SalesLastYear]"
                       name="SalesLastYear"
+                      precision="18"
+                      scale="2"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\DF - CleanSalesPerson\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[TerritoryID]"
@@ -4164,24 +4089,16 @@ JOIN bronze.Person   p ON sp.BusinessEntityID = p.BusinessEntityID</property>
                       dataType="i4"
                       name="SalesPersonID" />
                     <externalMetadataColumn
-                      refId="Package\DF - CleanSalesPerson\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[FirstName]"
-                      dataType="wstr"
-                      length="50"
-                      name="FirstName" />
-                    <externalMetadataColumn
-                      refId="Package\DF - CleanSalesPerson\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[LastName]"
-                      dataType="wstr"
-                      length="50"
-                      name="LastName" />
-                    <externalMetadataColumn
-                      refId="Package\DF - CleanSalesPerson\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[MiddleName]"
-                      dataType="wstr"
-                      length="50"
-                      name="MiddleName" />
+                      refId="Package\DF - CleanSalesPerson\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[FullName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="150"
+                      name="FullName" />
                     <externalMetadataColumn
                       refId="Package\DF - CleanSalesPerson\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[JobTitle]"
-                      dataType="wstr"
-                      length="50"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
                       name="JobTitle" />
                     <externalMetadataColumn
                       refId="Package\DF - CleanSalesPerson\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[HireDate]"
@@ -4189,20 +4106,28 @@ JOIN bronze.Person   p ON sp.BusinessEntityID = p.BusinessEntityID</property>
                       name="HireDate" />
                     <externalMetadataColumn
                       refId="Package\DF - CleanSalesPerson\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[SalesQuota]"
-                      dataType="cy"
-                      name="SalesQuota" />
+                      dataType="numeric"
+                      name="SalesQuota"
+                      precision="18"
+                      scale="2" />
                     <externalMetadataColumn
                       refId="Package\DF - CleanSalesPerson\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[CommissionPct]"
-                      dataType="cy"
-                      name="CommissionPct" />
+                      dataType="numeric"
+                      name="CommissionPct"
+                      precision="5"
+                      scale="4" />
                     <externalMetadataColumn
                       refId="Package\DF - CleanSalesPerson\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[SalesYTD]"
-                      dataType="cy"
-                      name="SalesYTD" />
+                      dataType="numeric"
+                      name="SalesYTD"
+                      precision="18"
+                      scale="2" />
                     <externalMetadataColumn
                       refId="Package\DF - CleanSalesPerson\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[SalesLastYear]"
-                      dataType="cy"
-                      name="SalesLastYear" />
+                      dataType="numeric"
+                      name="SalesLastYear"
+                      precision="18"
+                      scale="2" />
                     <externalMetadataColumn
                       refId="Package\DF - CleanSalesPerson\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[TerritoryID]"
                       dataType="i4"
@@ -4220,27 +4145,17 @@ JOIN bronze.Person   p ON sp.BusinessEntityID = p.BusinessEntityID</property>
                       lineageId="Package\DF - CleanSalesPerson\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[SalesPersonID]"
                       name="SalesPersonID" />
                     <outputColumn
-                      refId="Package\DF - CleanSalesPerson\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[FirstName]"
-                      dataType="wstr"
-                      length="50"
-                      lineageId="Package\DF - CleanSalesPerson\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[FirstName]"
-                      name="FirstName" />
-                    <outputColumn
-                      refId="Package\DF - CleanSalesPerson\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[LastName]"
-                      dataType="wstr"
-                      length="50"
-                      lineageId="Package\DF - CleanSalesPerson\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[LastName]"
-                      name="LastName" />
-                    <outputColumn
-                      refId="Package\DF - CleanSalesPerson\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[MiddleName]"
-                      dataType="wstr"
-                      length="50"
-                      lineageId="Package\DF - CleanSalesPerson\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[MiddleName]"
-                      name="MiddleName" />
+                      refId="Package\DF - CleanSalesPerson\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[FullName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="150"
+                      lineageId="Package\DF - CleanSalesPerson\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[FullName]"
+                      name="FullName" />
                     <outputColumn
                       refId="Package\DF - CleanSalesPerson\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[JobTitle]"
-                      dataType="wstr"
-                      length="50"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
                       lineageId="Package\DF - CleanSalesPerson\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[JobTitle]"
                       name="JobTitle" />
                     <outputColumn
@@ -4250,24 +4165,32 @@ JOIN bronze.Person   p ON sp.BusinessEntityID = p.BusinessEntityID</property>
                       name="HireDate" />
                     <outputColumn
                       refId="Package\DF - CleanSalesPerson\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[SalesQuota]"
-                      dataType="cy"
+                      dataType="numeric"
                       lineageId="Package\DF - CleanSalesPerson\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[SalesQuota]"
-                      name="SalesQuota" />
+                      name="SalesQuota"
+                      precision="18"
+                      scale="2" />
                     <outputColumn
                       refId="Package\DF - CleanSalesPerson\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[CommissionPct]"
-                      dataType="cy"
+                      dataType="numeric"
                       lineageId="Package\DF - CleanSalesPerson\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[CommissionPct]"
-                      name="CommissionPct" />
+                      name="CommissionPct"
+                      precision="5"
+                      scale="4" />
                     <outputColumn
                       refId="Package\DF - CleanSalesPerson\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[SalesYTD]"
-                      dataType="cy"
+                      dataType="numeric"
                       lineageId="Package\DF - CleanSalesPerson\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[SalesYTD]"
-                      name="SalesYTD" />
+                      name="SalesYTD"
+                      precision="18"
+                      scale="2" />
                     <outputColumn
                       refId="Package\DF - CleanSalesPerson\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[SalesLastYear]"
-                      dataType="cy"
+                      dataType="numeric"
                       lineageId="Package\DF - CleanSalesPerson\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[SalesLastYear]"
-                      name="SalesLastYear" />
+                      name="SalesLastYear"
+                      precision="18"
+                      scale="2" />
                     <outputColumn
                       refId="Package\DF - CleanSalesPerson\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[TerritoryID]"
                       dataType="i4"
@@ -4293,13 +4216,8 @@ JOIN bronze.Person   p ON sp.BusinessEntityID = p.BusinessEntityID</property>
           </components>
           <paths>
             <path
-              refId="Package\DF - CleanSalesPerson.Paths[Sortie de colonne dérivée]"
-              endId="Package\DF - CleanSalesPerson\Destination OLE DB.Inputs[Entrée de destination OLE DB]"
-              name="Sortie de colonne dérivée"
-              startId="Package\DF - CleanSalesPerson\Colonne dérivée.Outputs[Sortie de colonne dérivée]" />
-            <path
               refId="Package\DF - CleanSalesPerson.Paths[Sortie de source OLE DB]"
-              endId="Package\DF - CleanSalesPerson\Colonne dérivée.Inputs[Entrée de colonne dérivée]"
+              endId="Package\DF - CleanSalesPerson\Destination OLE DB.Inputs[Entrée de destination OLE DB]"
               name="Sortie de source OLE DB"
               startId="Package\DF - CleanSalesPerson\Source OLE DB.Outputs[Sortie de source OLE DB]" />
           </paths>
@@ -4894,7 +4812,7 @@ LEFT JOIN bronze.CountryRegion cr ON t.CountryRegionCode = cr.CountryRegionCode<
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Contrainte 4]"
       DTS:CreationName=""
-      DTS:DTSID="{D69FA1F2-8A85-467E-B753-B512FD62FAEE}"
+      DTS:DTSID="{D84C91A3-9CFC-4B74-80FE-FE870667595B}"
       DTS:From="Package\Truncate Silver"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Contrainte 4"
@@ -4929,9 +4847,9 @@ LEFT JOIN bronze.CountryRegion cr ON t.CountryRegionCode = cr.CountryRegionCode<
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="150,42"
-          Id="Package\Truncate Silver"
-          TopLeft="307,55" />
+          Size="173,42"
+          Id="Package\DF - CleanCustomer"
+          TopLeft="64,44" />
         <NodeLayout
           Size="164,42"
           Id="Package\DF - CleanProduct"
@@ -4941,25 +4859,25 @@ LEFT JOIN bronze.CountryRegion cr ON t.CountryRegionCode = cr.CountryRegionCode<
           Id="Package\DF - CleanProductCostHistory"
           TopLeft="160,178" />
         <NodeLayout
-          Size="169,42"
-          Id="Package\DF - CleanTerritory"
-          TopLeft="425,177" />
-        <NodeLayout
-          Size="185,42"
-          Id="Package\DF - CleanSalesPerson"
-          TopLeft="508,116" />
+          Size="220,42"
+          Id="Package\DF - CleanProductPriceHistory"
+          TopLeft="390,206" />
         <NodeLayout
           Size="153,42"
           Id="Package\DF - CleanSales"
-          TopLeft="729,60" />
+          TopLeft="733,26" />
         <NodeLayout
-          Size="220,42"
-          Id="Package\DF - CleanProductPriceHistory"
-          TopLeft="297,228" />
+          Size="185,42"
+          Id="Package\DF - CleanSalesPerson"
+          TopLeft="725,82" />
         <NodeLayout
-          Size="173,42"
-          Id="Package\DF - CleanCustomer"
-          TopLeft="64,44" />
+          Size="169,42"
+          Id="Package\DF - CleanTerritory"
+          TopLeft="533,153" />
+        <NodeLayout
+          Size="150,42"
+          Id="Package\Truncate Silver"
+          TopLeft="307,55" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Contrainte]"
           TopLeft="382,97">
@@ -5030,30 +4948,30 @@ LEFT JOIN bronze.CountryRegion cr ON t.CountryRegionCode = cr.CountryRegionCode<
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Contrainte 2]"
-          TopLeft="417.5,97">
+          TopLeft="396.2,97">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-10.5,131"
+              EndConnector="103.8,109"
               Start="0,0"
-              End="-10.5,123.5">
+              End="103.8,101.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,41.1921397379913" />
+                    End="0,44.8011782032401" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,41.1921397379913"
-                    Point2="0,45.1921397379913"
-                    Point3="-4,45.1921397379913" />
+                    Point1="0,44.8011782032401"
+                    Point2="0,48.8011782032401"
+                    Point3="4,48.8011782032401" />
                   <mssgle:LineSegment
-                    End="-6.5,45.1921397379913" />
+                    End="99.8,48.8011782032401" />
                   <mssgle:CubicBezierSegment
-                    Point1="-6.5,45.1921397379913"
-                    Point2="-10.5,45.1921397379913"
-                    Point3="-10.5,49.1921397379913" />
+                    Point1="99.8,48.8011782032401"
+                    Point2="103.8,48.8011782032401"
+                    Point3="103.8,52.8011782032401" />
                   <mssgle:LineSegment
-                    End="-10.5,123.5" />
+                    End="103.8,101.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5068,60 +4986,26 @@ LEFT JOIN bronze.CountryRegion cr ON t.CountryRegionCode = cr.CountryRegionCode<
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="28.9,80"
+              EndConnector="192.9,56"
               Start="0,0"
-              End="28.9,72.5">
+              End="192.9,48.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,20.1340782122905" />
+                    End="0,12.8938547486033" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,20.1340782122905"
-                    Point2="0,24.1340782122905"
-                    Point3="4,24.1340782122905" />
+                    Point1="0,12.8938547486033"
+                    Point2="0,16.8938547486033"
+                    Point3="4,16.8938547486033" />
                   <mssgle:LineSegment
-                    End="24.9,24.1340782122905" />
+                    End="188.9,16.8938547486033" />
                   <mssgle:CubicBezierSegment
-                    Point1="24.9,24.1340782122905"
-                    Point2="28.9,24.1340782122905"
-                    Point3="28.9,28.1340782122905" />
+                    Point1="188.9,16.8938547486033"
+                    Point2="192.9,16.8938547486033"
+                    Point3="192.9,20.8938547486033" />
                   <mssgle:LineSegment
-                    End="28.9,72.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Contrainte 4]"
-          TopLeft="457,76">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="51,61"
-              Start="0,0"
-              End="43.5,61">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="21.5,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="21.5,0"
-                    Point2="25.5,0"
-                    Point3="25.5,4" />
-                  <mssgle:LineSegment
-                    End="25.5,57" />
-                  <mssgle:CubicBezierSegment
-                    Point1="25.5,57"
-                    Point2="25.5,61"
-                    Point3="29.5,61" />
-                  <mssgle:LineSegment
-                    End="43.5,61" />
+                    End="192.9,48.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5136,26 +5020,26 @@ LEFT JOIN bronze.CountryRegion cr ON t.CountryRegionCode = cr.CountryRegionCode<
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="272,10.6666666666667"
+              EndConnector="276,-23.3333333333333"
               Start="0,0"
-              End="264.5,10.6666666666667">
+              End="268.5,-23.3333333333333">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="110.788990825688,0" />
+                    End="112.477064220183,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="110.788990825688,0"
-                    Point2="114.788990825688,0"
-                    Point3="114.788990825688,4" />
+                    Point1="112.477064220183,0"
+                    Point2="116.477064220183,0"
+                    Point3="116.477064220183,-4" />
                   <mssgle:LineSegment
-                    End="114.788990825688,6.66666666666667" />
+                    End="116.477064220183,-19.3333333333333" />
                   <mssgle:CubicBezierSegment
-                    Point1="114.788990825688,6.66666666666667"
-                    Point2="114.788990825688,10.6666666666667"
-                    Point3="118.788990825688,10.6666666666667" />
+                    Point1="116.477064220183,-19.3333333333333"
+                    Point2="116.477064220183,-23.3333333333333"
+                    Point3="120.477064220183,-23.3333333333333" />
                   <mssgle:LineSegment
-                    End="264.5,10.6666666666667" />
+                    End="268.5,-23.3333333333333" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5198,532 +5082,48 @@ LEFT JOIN bronze.CountryRegion cr ON t.CountryRegionCode = cr.CountryRegionCode<
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Contrainte 4]"
+          TopLeft="457,81.6666666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="268,21.3333333333333"
+              Start="0,0"
+              End="260.5,21.3333333333333">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="109.100917431193,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="109.100917431193,0"
+                    Point2="113.100917431193,0"
+                    Point3="113.100917431193,4" />
+                  <mssgle:LineSegment
+                    End="113.100917431193,17.3333333333333" />
+                  <mssgle:CubicBezierSegment
+                    Point1="113.100917431193,17.3333333333333"
+                    Point2="113.100917431193,21.3333333333333"
+                    Point3="117.100917431193,21.3333333333333" />
+                  <mssgle:LineSegment
+                    End="260.5,21.3333333333333" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>
   <TaskHost
-    design-time-name="Package\DF - CleanProduct">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="150,42"
-          Id="Package\DF - CleanProduct\Source OLE DB"
-          TopLeft="116,66" />
-        <NodeLayout
-          Size="155,42"
-          Id="Package\DF - CleanProduct\Colonne dérivée"
-          TopLeft="196,153" />
-        <EdgeLayout
-          Id="Package\DF - CleanProduct.Paths[Sortie de source OLE DB]"
-          TopLeft="191,108">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="82.5,45"
-              Start="0,0"
-              End="82.5,37.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,18.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,18.5"
-                    Point2="0,22.5"
-                    Point3="4,22.5" />
-                  <mssgle:LineSegment
-                    End="78.5,22.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="78.5,22.5"
-                    Point2="82.5,22.5"
-                    Point3="82.5,26.5" />
-                  <mssgle:LineSegment
-                    End="82.5,37.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="171,42"
-          Id="Package\DF - CleanProduct\Destination OLE DB"
-          TopLeft="271,278" />
-        <EdgeLayout
-          Id="Package\DF - CleanProduct.Paths[Sortie de colonne dérivée]"
-          TopLeft="273.5,195">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="83,83"
-              Start="0,0"
-              End="83,75.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,37.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,37.5"
-                    Point2="0,41.5"
-                    Point3="4,41.5" />
-                  <mssgle:LineSegment
-                    End="79,41.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="79,41.5"
-                    Point2="83,41.5"
-                    Point3="83,45.5" />
-                  <mssgle:LineSegment
-                    End="83,75.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <TaskHost
-    design-time-name="Package\DF - CleanProductCostHistory">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="150,42"
-          Id="Package\DF - CleanProductCostHistory\Source OLE DB"
-          TopLeft="109,103" />
-        <NodeLayout
-          Size="171,42"
-          Id="Package\DF - CleanProductCostHistory\Destination OLE DB"
-          TopLeft="262,195" />
-        <EdgeLayout
-          Id="Package\DF - CleanProductCostHistory.Paths[Sortie de source OLE DB]"
-          TopLeft="184,145">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="163.5,50"
-              Start="0,0"
-              End="163.5,42.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,21" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,21"
-                    Point2="0,25"
-                    Point3="4,25" />
-                  <mssgle:LineSegment
-                    End="159.5,25" />
-                  <mssgle:CubicBezierSegment
-                    Point1="159.5,25"
-                    Point2="163.5,25"
-                    Point3="163.5,29" />
-                  <mssgle:LineSegment
-                    End="163.5,42.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <TaskHost
-    design-time-name="Package\DF - CleanTerritory">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="150,42"
-          Id="Package\DF - CleanTerritory\Source OLE DB"
-          TopLeft="240,103" />
-        <NodeLayout
-          Size="155,42"
-          Id="Package\DF - CleanTerritory\Colonne dérivée"
-          TopLeft="286,201" />
-        <EdgeLayout
-          Id="Package\DF - CleanTerritory.Paths[Sortie de source OLE DB]"
-          TopLeft="315,145">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="48.5,56"
-              Start="0,0"
-              End="48.5,48.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,24" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,24"
-                    Point2="0,28"
-                    Point3="4,28" />
-                  <mssgle:LineSegment
-                    End="44.5,28" />
-                  <mssgle:CubicBezierSegment
-                    Point1="44.5,28"
-                    Point2="48.5,28"
-                    Point3="48.5,32" />
-                  <mssgle:LineSegment
-                    End="48.5,48.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="171,42"
-          Id="Package\DF - CleanTerritory\Destination OLE DB"
-          TopLeft="319,293" />
-        <EdgeLayout
-          Id="Package\DF - CleanTerritory.Paths[Sortie de colonne dérivée]"
-          TopLeft="363.5,243">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="41,50"
-              Start="0,0"
-              End="41,42.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,21" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,21"
-                    Point2="0,25"
-                    Point3="4,25" />
-                  <mssgle:LineSegment
-                    End="37,25" />
-                  <mssgle:CubicBezierSegment
-                    Point1="37,25"
-                    Point2="41,25"
-                    Point3="41,29" />
-                  <mssgle:LineSegment
-                    End="41,42.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <TaskHost
-    design-time-name="Package\DF - CleanSalesPerson">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="150,42"
-          Id="Package\DF - CleanSalesPerson\Source OLE DB"
-          TopLeft="115,74" />
-        <NodeLayout
-          Size="155,42"
-          Id="Package\DF - CleanSalesPerson\Colonne dérivée"
-          TopLeft="238,170" />
-        <EdgeLayout
-          Id="Package\DF - CleanSalesPerson.Paths[Sortie de source OLE DB]"
-          TopLeft="190,116">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="125.5,54"
-              Start="0,0"
-              End="125.5,46.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,23" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,23"
-                    Point2="0,27"
-                    Point3="4,27" />
-                  <mssgle:LineSegment
-                    End="121.5,27" />
-                  <mssgle:CubicBezierSegment
-                    Point1="121.5,27"
-                    Point2="125.5,27"
-                    Point3="125.5,31" />
-                  <mssgle:LineSegment
-                    End="125.5,46.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="171,42"
-          Id="Package\DF - CleanSalesPerson\Destination OLE DB"
-          TopLeft="328,273" />
-        <EdgeLayout
-          Id="Package\DF - CleanSalesPerson.Paths[Sortie de colonne dérivée]"
-          TopLeft="315.5,212">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="98,61"
-              Start="0,0"
-              End="98,53.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,26.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,26.5"
-                    Point2="0,30.5"
-                    Point3="4,30.5" />
-                  <mssgle:LineSegment
-                    End="94,30.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="94,30.5"
-                    Point2="98,30.5"
-                    Point3="98,34.5" />
-                  <mssgle:LineSegment
-                    End="98,53.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <TaskHost
-    design-time-name="Package\DF - CleanSales">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="150,42"
-          Id="Package\DF - CleanSales\Source OLE DB"
-          TopLeft="181,105" />
-        <NodeLayout
-          Size="212,42"
-          Id="Package\DF - CleanSales\Fractionnement conditionnel"
-          TopLeft="231,221" />
-        <EdgeLayout
-          Id="Package\DF - CleanSales.Paths[Sortie de source OLE DB]"
-          TopLeft="256,147">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="81,74"
-              Start="0,0"
-              End="81,66.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,33" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,33"
-                    Point2="0,37"
-                    Point3="4,37" />
-                  <mssgle:LineSegment
-                    End="77,37" />
-                  <mssgle:CubicBezierSegment
-                    Point1="77,37"
-                    Point2="81,37"
-                    Point3="81,41" />
-                  <mssgle:LineSegment
-                    End="81,66.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="155,42"
-          Id="Package\DF - CleanSales\Colonne dérivée"
-          TopLeft="556,227" />
-        <EdgeLayout
-          Id="Package\DF - CleanSales.Paths[Commandes valides]"
-          TopLeft="443,245">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="113,0"
-              Start="0,0"
-              End="105.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="105.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="8.24990234374999,5,89.0001953125,9.7490234375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="101,42"
-          Id="Package\DF - CleanSales\Trier"
-          TopLeft="572,318" />
-        <EdgeLayout
-          Id="Package\DF - CleanSales.Paths[Sortie de colonne dérivée]"
-          TopLeft="633.5,269">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-11,49"
-              Start="0,0"
-              End="-11,41.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,20.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,20.5"
-                    Point2="0,24.5"
-                    Point3="-4,24.5" />
-                  <mssgle:LineSegment
-                    End="-7,24.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-7,24.5"
-                    Point2="-11,24.5"
-                    Point3="-11,28.5" />
-                  <mssgle:LineSegment
-                    End="-11,41.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="171,42"
-          Id="Package\DF - CleanSales\Destination OLE DB"
-          TopLeft="794,332" />
-        <EdgeLayout
-          Id="Package\DF - CleanSales.Paths[Sortie de tri]"
-          TopLeft="673,339">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="121,14"
-              Start="0,0"
-              End="113.5,14">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="56.5,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="56.5,0"
-                    Point2="60.5,0"
-                    Point3="60.5,4" />
-                  <mssgle:LineSegment
-                    End="60.5,10" />
-                  <mssgle:CubicBezierSegment
-                    Point1="60.5,10"
-                    Point2="60.5,14"
-                    Point3="64.5,14" />
-                  <mssgle:LineSegment
-                    End="113.5,14" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <TaskHost
-    design-time-name="Package\DF - CleanProductPriceHistory">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="150,42"
-          Id="Package\DF - CleanProductPriceHistory\Source OLE DB"
-          TopLeft="153,68" />
-        <NodeLayout
-          Size="171,42"
-          Id="Package\DF - CleanProductPriceHistory\Destination OLE DB"
-          TopLeft="270,161" />
-        <EdgeLayout
-          Id="Package\DF - CleanProductPriceHistory.Paths[Sortie de source OLE DB]"
-          TopLeft="228,110">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="127.5,51"
-              Start="0,0"
-              End="127.5,43.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,21.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,21.5"
-                    Point2="0,25.5"
-                    Point3="4,25.5" />
-                  <mssgle:LineSegment
-                    End="123.5,25.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="123.5,25.5"
-                    Point2="127.5,25.5"
-                    Point3="127.5,29.5" />
-                  <mssgle:LineSegment
-                    End="127.5,43.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <TaskHost
     design-time-name="Package\DF - CleanCustomer">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="150,42"
           Id="Package\DF - CleanCustomer\Source OLE DB"
@@ -5763,64 +5163,16 @@ LEFT JOIN bronze.CountryRegion cr ON t.CountryRegionCode = cr.CountryRegionCode<
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\DF - CleanProduct\Source OLE DB">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\DF - CleanProduct\Destination OLE DB">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\DF - CleanProductCostHistory\Source OLE DB">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\DF - CleanProductCostHistory\Destination OLE DB">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\DF - CleanProductPriceHistory\Source OLE DB">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\DF - CleanProductPriceHistory\Destination OLE DB">
+    design-time-name="Package\DF - CleanCustomer\Destination OLE DB">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -5840,8 +5192,586 @@ LEFT JOIN bronze.CountryRegion cr ON t.CountryRegionCode = cr.CountryRegionCode<
       </Property>
     </Properties>
   </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\DF - CleanProduct">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="171,42"
+          Id="Package\DF - CleanProduct\Destination OLE DB"
+          TopLeft="271,278" />
+        <NodeLayout
+          Size="150,42"
+          Id="Package\DF - CleanProduct\Source OLE DB"
+          TopLeft="116,66" />
+        <NodeLayout
+          Size="155,42"
+          Id="Package\DF - CleanProduct\Colonne dérivée"
+          TopLeft="196,153" />
+        <EdgeLayout
+          Id="Package\DF - CleanProduct.Paths[Sortie de source OLE DB]"
+          TopLeft="191,108">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="82.5,45"
+              Start="0,0"
+              End="82.5,37.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,18.5"
+                    Point2="0,22.5"
+                    Point3="4,22.5" />
+                  <mssgle:LineSegment
+                    End="78.5,22.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="78.5,22.5"
+                    Point2="82.5,22.5"
+                    Point3="82.5,26.5" />
+                  <mssgle:LineSegment
+                    End="82.5,37.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DF - CleanProduct.Paths[Sortie de colonne dérivée]"
+          TopLeft="273.5,195">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="83,83"
+              Start="0,0"
+              End="83,75.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,37.5"
+                    Point2="0,41.5"
+                    Point3="4,41.5" />
+                  <mssgle:LineSegment
+                    End="79,41.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="79,41.5"
+                    Point2="83,41.5"
+                    Point3="83,45.5" />
+                  <mssgle:LineSegment
+                    End="83,75.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\DF - CleanCustomer\Destination OLE DB">
+    design-time-name="Package\DF - CleanProduct\Destination OLE DB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DF - CleanProduct\Source OLE DB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\DF - CleanProductCostHistory">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="171,42"
+          Id="Package\DF - CleanProductCostHistory\Destination OLE DB"
+          TopLeft="262,195" />
+        <NodeLayout
+          Size="150,42"
+          Id="Package\DF - CleanProductCostHistory\Source OLE DB"
+          TopLeft="109,103" />
+        <EdgeLayout
+          Id="Package\DF - CleanProductCostHistory.Paths[Sortie de source OLE DB]"
+          TopLeft="184,145">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="163.5,50"
+              Start="0,0"
+              End="163.5,42.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,21"
+                    Point2="0,25"
+                    Point3="4,25" />
+                  <mssgle:LineSegment
+                    End="159.5,25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="159.5,25"
+                    Point2="163.5,25"
+                    Point3="163.5,29" />
+                  <mssgle:LineSegment
+                    End="163.5,42.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DF - CleanProductCostHistory\Destination OLE DB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DF - CleanProductCostHistory\Source OLE DB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\DF - CleanProductPriceHistory">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="171,42"
+          Id="Package\DF - CleanProductPriceHistory\Destination OLE DB"
+          TopLeft="270,161" />
+        <NodeLayout
+          Size="150,42"
+          Id="Package\DF - CleanProductPriceHistory\Source OLE DB"
+          TopLeft="153,68" />
+        <EdgeLayout
+          Id="Package\DF - CleanProductPriceHistory.Paths[Sortie de source OLE DB]"
+          TopLeft="228,110">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="127.5,51"
+              Start="0,0"
+              End="127.5,43.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,21.5"
+                    Point2="0,25.5"
+                    Point3="4,25.5" />
+                  <mssgle:LineSegment
+                    End="123.5,25.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="123.5,25.5"
+                    Point2="127.5,25.5"
+                    Point3="127.5,29.5" />
+                  <mssgle:LineSegment
+                    End="127.5,43.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DF - CleanProductPriceHistory\Destination OLE DB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DF - CleanProductPriceHistory\Source OLE DB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\DF - CleanSales">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="171,42"
+          Id="Package\DF - CleanSales\Destination OLE DB"
+          TopLeft="794,332" />
+        <NodeLayout
+          Size="212,42"
+          Id="Package\DF - CleanSales\Fractionnement conditionnel"
+          TopLeft="231,221" />
+        <NodeLayout
+          Size="150,42"
+          Id="Package\DF - CleanSales\Source OLE DB"
+          TopLeft="181,105" />
+        <NodeLayout
+          Size="155,42"
+          Id="Package\DF - CleanSales\Colonne dérivée"
+          TopLeft="556,227" />
+        <NodeLayout
+          Size="101,42"
+          Id="Package\DF - CleanSales\Trier"
+          TopLeft="572,318" />
+        <EdgeLayout
+          Id="Package\DF - CleanSales.Paths[Sortie de colonne dérivée]"
+          TopLeft="633.5,269">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-11,49"
+              Start="0,0"
+              End="-11,41.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.5"
+                    Point2="0,24.5"
+                    Point3="-4,24.5" />
+                  <mssgle:LineSegment
+                    End="-7,24.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-7,24.5"
+                    Point2="-11,24.5"
+                    Point3="-11,28.5" />
+                  <mssgle:LineSegment
+                    End="-11,41.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DF - CleanSales.Paths[Commandes valides]"
+          TopLeft="443,245">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="113,0"
+              Start="0,0"
+              End="105.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="105.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="8.24990234374999,5,89.0001953125,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DF - CleanSales.Paths[Sortie de tri]"
+          TopLeft="673,339">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="121,14"
+              Start="0,0"
+              End="113.5,14">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="56.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="56.5,0"
+                    Point2="60.5,0"
+                    Point3="60.5,4" />
+                  <mssgle:LineSegment
+                    End="60.5,10" />
+                  <mssgle:CubicBezierSegment
+                    Point1="60.5,10"
+                    Point2="60.5,14"
+                    Point3="64.5,14" />
+                  <mssgle:LineSegment
+                    End="113.5,14" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DF - CleanSales.Paths[Sortie de source OLE DB]"
+          TopLeft="256,147">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="81,74"
+              Start="0,0"
+              End="81,66.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,33"
+                    Point2="0,37"
+                    Point3="4,37" />
+                  <mssgle:LineSegment
+                    End="77,37" />
+                  <mssgle:CubicBezierSegment
+                    Point1="77,37"
+                    Point2="81,37"
+                    Point3="81,41" />
+                  <mssgle:LineSegment
+                    End="81,66.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DF - CleanSales\Source OLE DB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DF - CleanSales\Destination OLE DB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\DF - CleanSalesPerson">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="150,42"
+          Id="Package\DF - CleanSalesPerson\Source OLE DB"
+          TopLeft="164,148" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\DF - CleanSalesPerson\Destination OLE DB"
+          TopLeft="404,221" />
+        <EdgeLayout
+          Id="Package\DF - CleanSalesPerson.Paths[Sortie de source OLE DB]"
+          TopLeft="239,190">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="250.5,31"
+              Start="0,0"
+              End="250.5,23.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,11.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,11.5"
+                    Point2="0,15.5"
+                    Point3="4,15.5" />
+                  <mssgle:LineSegment
+                    End="246.5,15.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="246.5,15.5"
+                    Point2="250.5,15.5"
+                    Point3="250.5,19.5" />
+                  <mssgle:LineSegment
+                    End="250.5,23.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <TaskHost
+    design-time-name="Package\DF - CleanTerritory">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="171,42"
+          Id="Package\DF - CleanTerritory\Destination OLE DB"
+          TopLeft="319,293" />
+        <NodeLayout
+          Size="155,42"
+          Id="Package\DF - CleanTerritory\Colonne dérivée"
+          TopLeft="286,201" />
+        <NodeLayout
+          Size="150,42"
+          Id="Package\DF - CleanTerritory\Source OLE DB"
+          TopLeft="240,103" />
+        <EdgeLayout
+          Id="Package\DF - CleanTerritory.Paths[Sortie de source OLE DB]"
+          TopLeft="315,145">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="48.5,56"
+              Start="0,0"
+              End="48.5,48.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,24"
+                    Point2="0,28"
+                    Point3="4,28" />
+                  <mssgle:LineSegment
+                    End="44.5,28" />
+                  <mssgle:CubicBezierSegment
+                    Point1="44.5,28"
+                    Point2="48.5,28"
+                    Point3="48.5,32" />
+                  <mssgle:LineSegment
+                    End="48.5,48.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DF - CleanTerritory.Paths[Sortie de colonne dérivée]"
+          TopLeft="363.5,243">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="41,50"
+              Start="0,0"
+              End="41,42.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,21"
+                    Point2="0,25"
+                    Point3="4,25" />
+                  <mssgle:LineSegment
+                    End="37,25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="37,25"
+                    Point2="41,25"
+                    Point3="41,29" />
+                  <mssgle:LineSegment
+                    End="41,42.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DF - CleanTerritory\Destination OLE DB">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -5862,19 +5792,6 @@ LEFT JOIN bronze.CountryRegion cr ON t.CountryRegionCode = cr.CountryRegionCode<
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\DF - CleanTerritory\Destination OLE DB">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\DF - CleanSalesPerson\Source OLE DB">
     <Properties>
       <Property>
@@ -5884,27 +5801,6 @@ LEFT JOIN bronze.CountryRegion cr ON t.CountryRegionCode = cr.CountryRegionCode<
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\DF - CleanSalesPerson\Destination OLE DB">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\DF - CleanSales\Source OLE DB">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\DF - CleanSales\Destination OLE DB">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
