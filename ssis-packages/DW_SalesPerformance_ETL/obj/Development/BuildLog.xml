@@ -8,22 +8,22 @@
   <LastBuildInfos>
     <ProjectBuildItemInfo>
       <Name>01_Load_Bronze.dtsx</Name>
-      <LastWriteTime>2026-05-20T23:14:45.2181253Z</LastWriteTime>
+      <LastWriteTime>2026-05-21T11:24:24.6933219Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>02_Load_Silver.dtsx</Name>
-      <LastWriteTime>2026-05-21T11:20:45.7968599Z</LastWriteTime>
+      <LastWriteTime>2026-05-21T16:30:25.6209526Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>03_Load_Gold.dtsx</Name>
-      <LastWriteTime>2026-05-21T11:22:46.1110945Z</LastWriteTime>
+      <LastWriteTime>2026-05-21T11:24:19.7094897Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>00_Master_ETL.dtsx</Name>
-      <LastWriteTime>2026-05-21T11:01:39.9761981Z</LastWriteTime>
+      <LastWriteTime>2026-05-21T17:03:38.7397338Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>

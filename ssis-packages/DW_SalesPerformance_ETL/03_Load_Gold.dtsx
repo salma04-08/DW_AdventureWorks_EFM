@@ -11,8 +11,8 @@
   DTS:LocaleID="1036"
   DTS:ObjectName="03_Load_Gold"
   DTS:PackageType="5"
-  DTS:VersionBuild="43"
-  DTS:VersionGUID="{4B544EC2-7B6C-4C93-B005-8D99FBC69AB0}">
+  DTS:VersionBuild="45"
+  DTS:VersionGUID="{8A347DE3-6ED9-4136-B39C-B401D50BA092}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -1643,13 +1643,13 @@ ORDER BY FullDate</property>
                           containsID="true"
                           dataType="System.String"
                           description="Expression de colonne dérivée"
-                          name="Expression">(DT_DBDATE)(@[System::ContainerStartTime])</property>
+                          name="Expression">(DT_DBDATE)(@[System::CreationDate])</property>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Expression claire de colonne dérivée"
                           expressionType="Notify"
-                          name="FriendlyExpression">(DT_DBDATE)(@[System::ContainerStartTime])</property>
+                          name="FriendlyExpression">(DT_DBDATE)(@[System::CreationDate])</property>
                       </properties>
                     </outputColumn>
                   </outputColumns>
@@ -1717,13 +1717,13 @@ ORDER BY FullDate</property>
                           containsID="true"
                           dataType="System.String"
                           description="Expression de colonne dérivée"
-                          name="Expression">(DT_DBDATE)(@[System::ContainerStartTime])</property>
+                          name="Expression">(DT_DBDATE)(@[System::CreationDate])</property>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Expression claire de colonne dérivée"
                           expressionType="Notify"
-                          name="FriendlyExpression">(DT_DBDATE)(@[System::ContainerStartTime])</property>
+                          name="FriendlyExpression">(DT_DBDATE)(@[System::CreationDate])</property>
                       </properties>
                     </outputColumn>
                   </outputColumns>
@@ -7251,7 +7251,7 @@ FROM silver.CleanSales</property>
     design-time-name="Package\DF - DimCustomer">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="171,42"
           Id="Package\DF - DimCustomer\Destination OLE DB"
@@ -7295,9 +7295,7 @@ FROM silver.CleanSales</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -7331,9 +7329,7 @@ FROM silver.CleanSales</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -7364,7 +7360,7 @@ FROM silver.CleanSales</property>
     design-time-name="Package\DF - DimDate">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="171,42"
           Id="Package\DF - DimDate\Destination OLE DB"
@@ -7408,9 +7404,7 @@ FROM silver.CleanSales</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -7444,9 +7438,7 @@ FROM silver.CleanSales</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -7479,14 +7471,6 @@ FROM silver.CleanSales</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="155,42"
-          Id="Package\DF - DimProduct\Colonne dérivée"
-          TopLeft="21.5,209.5" />
-        <NodeLayout
-          Size="164,42"
-          Id="Package\DF - DimProduct\Colonne dérivée 1"
-          TopLeft="156,515.5" />
-        <NodeLayout
           Size="150,42"
           Id="Package\DF - DimProduct\Source OLE DB"
           TopLeft="163,5.5" />
@@ -7494,42 +7478,6 @@ FROM silver.CleanSales</property>
           Size="207,42"
           Id="Package\DF - DimProduct\Dimension à variation lente"
           TopLeft="134.5,107.5" />
-        <NodeLayout
-          Size="120,42"
-          Id="Package\DF - DimProduct\Unir tout"
-          TopLeft="178,413.5" />
-        <NodeLayout
-          Size="171,42"
-          Id="Package\DF - DimProduct\Commande OLE DB"
-          TopLeft="5.50000000000003,311.5" />
-        <NodeLayout
-          Size="184,42"
-          Id="Package\DF - DimProduct\Destination d'insertion"
-          TopLeft="146,617.5" />
-        <EdgeLayout
-          Id="Package\DF - DimProduct.Paths[Unir tout sortie 1]"
-          TopLeft="238,455.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <EdgeLayout
           Id="Package\DF - DimProduct.Paths[Sortie de source OLE DB]"
           TopLeft="238,47.5">
@@ -7549,107 +7497,13 @@ FROM silver.CleanSales</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DF - DimProduct.Paths[Sortie de commande OLE DB]"
-          TopLeft="91,353.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="128.333333333333,60"
-              Start="0,0"
-              End="128.333333333333,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,31.5263157894737" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,31.5263157894737"
-                    Point2="0,35.5263157894737"
-                    Point3="4,35.5263157894737" />
-                  <mssgle:LineSegment
-                    End="124.333333333333,35.5263157894737" />
-                  <mssgle:CubicBezierSegment
-                    Point1="124.333333333333,35.5263157894737"
-                    Point2="128.333333333333,35.5263157894737"
-                    Point3="128.333333333333,39.5263157894737" />
-                  <mssgle:LineSegment
-                    End="128.333333333333,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DF - DimProduct.Paths[Sortie de colonne dérivée1]"
-          TopLeft="238,557.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DF - DimProduct.Paths[Sortie de colonne dérivée]"
-          TopLeft="99,251.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-8,60"
-              Start="0,0"
-              End="-8,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,26" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,26"
-                    Point2="0,30"
-                    Point3="-4,30" />
-                  <mssgle:LineSegment
-                    End="-4,30" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-4,30"
-                    Point2="-8,30"
-                    Point3="-8,34" />
-                  <mssgle:LineSegment
-                    End="-8,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+        <NodeLayout
+          Size="155,42"
+          Id="Package\DF - DimProduct\Colonne dérivée"
+          TopLeft="21.5,209.5" />
         <EdgeLayout
           Id="Package\DF - DimProduct.Paths[Sortie d'insertions d'attribut d'historique]"
           TopLeft="204.833333333333,149.5">
@@ -7686,6 +7540,48 @@ FROM silver.CleanSales</property>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="171,42"
+          Id="Package\DF - DimProduct\Commande OLE DB"
+          TopLeft="5.50000000000003,311.5" />
+        <EdgeLayout
+          Id="Package\DF - DimProduct.Paths[Sortie de colonne dérivée]"
+          TopLeft="99,251.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-8,60"
+              Start="0,0"
+              End="-8,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,26"
+                    Point2="0,30"
+                    Point3="-4,30" />
+                  <mssgle:LineSegment
+                    End="-4,30" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-4,30"
+                    Point2="-8,30"
+                    Point3="-8,34" />
+                  <mssgle:LineSegment
+                    End="-8,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="120,42"
+          Id="Package\DF - DimProduct\Unir tout"
+          TopLeft="178,413.5" />
         <EdgeLayout
           Id="Package\DF - DimProduct.Paths[Nouvelle sortie]"
           TopLeft="271.166666666667,149.5">
@@ -7720,6 +7616,92 @@ FROM silver.CleanSales</property>
             <mssgm:EdgeLabel
               BoundingBox="-40.38634765625,136.099082136973,66.2726953125,9.7490234375"
               RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DF - DimProduct.Paths[Sortie de commande OLE DB]"
+          TopLeft="91,353.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="128.333333333333,60"
+              Start="0,0"
+              End="128.333333333333,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.5263157894737" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,31.5263157894737"
+                    Point2="0,35.5263157894737"
+                    Point3="4,35.5263157894737" />
+                  <mssgle:LineSegment
+                    End="124.333333333333,35.5263157894737" />
+                  <mssgle:CubicBezierSegment
+                    Point1="124.333333333333,35.5263157894737"
+                    Point2="128.333333333333,35.5263157894737"
+                    Point3="128.333333333333,39.5263157894737" />
+                  <mssgle:LineSegment
+                    End="128.333333333333,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="164,42"
+          Id="Package\DF - DimProduct\Colonne dérivée 1"
+          TopLeft="156,515.5" />
+        <EdgeLayout
+          Id="Package\DF - DimProduct.Paths[Unir tout sortie 1]"
+          TopLeft="238,455.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="184,42"
+          Id="Package\DF - DimProduct\Destination d'insertion"
+          TopLeft="146,617.5" />
+        <EdgeLayout
+          Id="Package\DF - DimProduct.Paths[Sortie de colonne dérivée1]"
+          TopLeft="238,557.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -7833,22 +7815,9 @@ FROM silver.CleanSales</property>
   &lt;ValueExpired /&gt;
   &lt;StartDateColumn&gt;DWStartDate&lt;/StartDateColumn&gt;
   &lt;EndDateColumn&gt;DWEndDate&lt;/EndDateColumn&gt;
-  &lt;DateVariable&gt;System::ContainerStartTime&lt;/DateVariable&gt;
+  &lt;DateVariable&gt;System::CreationDate&lt;/DateVariable&gt;
   &lt;EnableInferredSupport&gt;false&lt;/EnableInferredSupport&gt;
 &lt;/SCDWizardMetadata&gt;</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\DF - DimProduct\Destination d'insertion">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -7903,6 +7872,19 @@ FROM silver.CleanSales</property>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
+    design-time-name="Package\DF - DimSalesPerson\Destination OLE DB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
     design-time-name="Package\DF - DimSalesPerson\Source OLE DB">
     <Properties>
       <Property>
@@ -7914,7 +7896,7 @@ FROM silver.CleanSales</property>
     design-time-name="Package\DF - DimTerritory">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="171,42"
           Id="Package\DF - DimTerritory\Destination OLE DB"
@@ -7958,9 +7940,7 @@ FROM silver.CleanSales</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -7994,9 +7974,7 @@ FROM silver.CleanSales</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -8453,7 +8431,7 @@ FROM silver.CleanSales</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -8584,7 +8562,7 @@ FROM silver.CleanSales</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\DF - DimSalesPerson\Destination OLE DB">
+    design-time-name="Package\DF - DimProduct\Destination d'insertion">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

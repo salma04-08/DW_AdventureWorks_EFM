@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.37203.1 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{D2ABAB84-BF74-430A-B69E-9DC6D40DDA17}") = "DW_SalesPerformance_SSAS", "DW_SalesPerformance_SSAS.dwproj", "{4EA81FD5-0354-C121-3818-494F833B4018}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4EA81FD5-0354-C121-3818-494F833B4018}.Development|Default.ActiveCfg = Development
+		{4EA81FD5-0354-C121-3818-494F833B4018}.Development|Default.Build.0 = Development
+		{4EA81FD5-0354-C121-3818-494F833B4018}.Development|Default.Deploy.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5453179B-9A60-42D1-8866-1B33C30C6F57}
+	EndGlobalSection
+EndGlobal

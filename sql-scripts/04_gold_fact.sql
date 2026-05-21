@@ -136,3 +136,72 @@ FROM INFORMATION_SCHEMA.COLUMNS
 WHERE TABLE_SCHEMA = 'gold'
 AND TABLE_NAME = 'DimProduct'
 ORDER BY ORDINAL_POSITION;
+
+ALTER TABLE gold.DimDate
+ALTER COLUMN QuarterName VARCHAR(10) NOT NULL;
+
+ALTER TABLE gold.DimSalesPerson
+ALTER COLUMN FullName VARCHAR(200) NOT NULL;
+
+ALTER TABLE gold.DimCustomer
+ALTER COLUMN FullName VARCHAR(200) NOT NULL;
+
+PRINT '✓ Colonnes corrigées';
+
+USE DW_SalesPerformance_AW;
+
+-- Vérifie la longueur max de FullName dans Silver
+SELECT MAX(LEN(FullName)) AS MaxLen, MAX(FullName) AS ExempleMax
+FROM silver.CleanSalesPerson;
+
+-- Vérifie aussi pour la ligne vente en ligne
+SELECT LEN('Vente en ligne') AS LenVenteEnLigne;
+
+SELECT COUNT(*) FROM silver.CleanSalesPerson;
+
+SELECT TOP 5 SalesPersonID, FullName, JobTitle
+FROM silver.CleanSalesPerson;
+
+USE DW_SalesPerformance_AW;
+GO
+
+UPDATE sp
+SET sp.FullName = TRIM(p.FirstName + ' ' + 
+                  ISNULL(p.MiddleName + ' ', '') + 
+                  p.LastName)
+FROM silver.CleanSalesPerson sp
+JOIN bronze.Employee e ON sp.SalesPersonID = e.BusinessEntityID
+JOIN bronze.Person   p ON sp.SalesPersonID = p.BusinessEntityID;
+
+PRINT '✓ FullName mis à jour — ' + CAST(@@ROWCOUNT AS VARCHAR) + ' lignes';
+
+-- Vérification
+SELECT TOP 5 SalesPersonID, FullName, JobTitle
+FROM silver.CleanSalesPerson;
+
+SELECT IsCurrent, COUNT(*) AS NbLignes
+FROM gold.DimProduct
+GROUP BY IsCurrent;
+
+SELECT SalesPersonKey, SalesPersonID, FullName
+FROM gold.DimSalesPerson
+WHERE SalesPersonID = -1;
+
+USE DW_SalesPerformance_AW;
+GO
+
+DROP TABLE IF EXISTS silver.CleanSalesPerson;
+
+CREATE TABLE silver.CleanSalesPerson (
+    SalesPersonID INT           NOT NULL,
+    FullName      VARCHAR(150)  NOT NULL,
+    JobTitle      VARCHAR(100)  NOT NULL,
+    HireDate      DATE          NOT NULL,
+    SalesQuota    DECIMAL(18,2) NOT NULL,
+    CommissionPct DECIMAL(5,4)  NOT NULL,
+    SalesYTD      DECIMAL(18,2) NOT NULL,
+    SalesLastYear DECIMAL(18,2) NOT NULL,
+    TerritoryID   INT           NULL
+);
+
+PRINT '✓ silver.CleanSalesPerson recréée en VARCHAR';
