@@ -3,20 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\fatimazahra\\DW_AdventureWorks_EFM\\ssis-packages\\DW_SalesPerformance_ETL\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{47DB1EFF-FFC5-4578-8903-B750E470A167}|DW_SalesPerformance_ETL.dtproj|C:\\Users\\fatimazahra\\DW_AdventureWorks_EFM\\ssis-packages\\DW_SalesPerformance_ETL\\01_Load_Bronze.dtsx||{CC84AFBD-DA02-46F4-8623-9F07E5569EDB}|Design",
-      "RelativeMoniker": "D:0:0:{47DB1EFF-FFC5-4578-8903-B750E470A167}|DW_SalesPerformance_ETL.dtproj|solutionrelative:01_Load_Bronze.dtsx||{CC84AFBD-DA02-46F4-8623-9F07E5569EDB}|Design"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{47DB1EFF-FFC5-4578-8903-B750E470A167}|DW_SalesPerformance_ETL.dtproj|C:\\Users\\fatimazahra\\DW_AdventureWorks_EFM\\ssis-packages\\DW_SalesPerformance_ETL\\00_Master_ETL.dtsx||{CC84AFBD-DA02-46F4-8623-9F07E5569EDB}|Design",
-      "RelativeMoniker": "D:0:0:{47DB1EFF-FFC5-4578-8903-B750E470A167}|DW_SalesPerformance_ETL.dtproj|solutionrelative:00_Master_ETL.dtsx||{CC84AFBD-DA02-46F4-8623-9F07E5569EDB}|Design"
+      "AbsoluteMoniker": "D:0:0:{47DB1EFF-FFC5-4578-8903-B750E470A167}|DW_SalesPerformance_ETL.dtproj|C:\\Users\\fatimazahra\\DW_AdventureWorks_EFM\\ssis-packages\\DW_SalesPerformance_ETL\\02_Load_Silver.dtsx||{CC84AFBD-DA02-46F4-8623-9F07E5569EDB}|Design",
+      "RelativeMoniker": "D:0:0:{47DB1EFF-FFC5-4578-8903-B750E470A167}|DW_SalesPerformance_ETL.dtproj|solutionrelative:02_Load_Silver.dtsx||{CC84AFBD-DA02-46F4-8623-9F07E5569EDB}|Design"
     },
     {
       "AbsoluteMoniker": "D:0:0:{47DB1EFF-FFC5-4578-8903-B750E470A167}|DW_SalesPerformance_ETL.dtproj|C:\\Users\\fatimazahra\\DW_AdventureWorks_EFM\\ssis-packages\\DW_SalesPerformance_ETL\\03_Load_Gold.dtsx||{CC84AFBD-DA02-46F4-8623-9F07E5569EDB}|Design",
       "RelativeMoniker": "D:0:0:{47DB1EFF-FFC5-4578-8903-B750E470A167}|DW_SalesPerformance_ETL.dtproj|solutionrelative:03_Load_Gold.dtsx||{CC84AFBD-DA02-46F4-8623-9F07E5569EDB}|Design"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{47DB1EFF-FFC5-4578-8903-B750E470A167}|DW_SalesPerformance_ETL.dtproj|C:\\Users\\fatimazahra\\DW_AdventureWorks_EFM\\ssis-packages\\DW_SalesPerformance_ETL\\02_Load_Silver.dtsx||{CC84AFBD-DA02-46F4-8623-9F07E5569EDB}|Design",
-      "RelativeMoniker": "D:0:0:{47DB1EFF-FFC5-4578-8903-B750E470A167}|DW_SalesPerformance_ETL.dtproj|solutionrelative:02_Load_Silver.dtsx||{CC84AFBD-DA02-46F4-8623-9F07E5569EDB}|Design"
+      "AbsoluteMoniker": "D:0:0:{47DB1EFF-FFC5-4578-8903-B750E470A167}|DW_SalesPerformance_ETL.dtproj|C:\\Users\\fatimazahra\\DW_AdventureWorks_EFM\\ssis-packages\\DW_SalesPerformance_ETL\\00_Master_ETL.dtsx||{CC84AFBD-DA02-46F4-8623-9F07E5569EDB}|Design",
+      "RelativeMoniker": "D:0:0:{47DB1EFF-FFC5-4578-8903-B750E470A167}|DW_SalesPerformance_ETL.dtproj|solutionrelative:00_Master_ETL.dtsx||{CC84AFBD-DA02-46F4-8623-9F07E5569EDB}|Design"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{47DB1EFF-FFC5-4578-8903-B750E470A167}|DW_SalesPerformance_ETL.dtproj|C:\\Users\\fatimazahra\\DW_AdventureWorks_EFM\\ssis-packages\\DW_SalesPerformance_ETL\\01_Load_Bronze.dtsx||{CC84AFBD-DA02-46F4-8623-9F07E5569EDB}|Design",
+      "RelativeMoniker": "D:0:0:{47DB1EFF-FFC5-4578-8903-B750E470A167}|DW_SalesPerformance_ETL.dtproj|solutionrelative:01_Load_Bronze.dtsx||{CC84AFBD-DA02-46F4-8623-9F07E5569EDB}|Design"
     }
   ],
   "DocumentGroupContainers": [
@@ -36,11 +36,11 @@
         },
         {
           "DockedWidth": 148,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "00_Master_ETL.dtsx [Conception]",
               "DocumentMoniker": "C:\\Users\\fatimazahra\\DW_AdventureWorks_EFM\\ssis-packages\\DW_SalesPerformance_ETL\\00_Master_ETL.dtsx",
               "RelativeDocumentMoniker": "00_Master_ETL.dtsx",
@@ -52,7 +52,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "01_Load_Bronze.dtsx [Conception]",
               "DocumentMoniker": "C:\\Users\\fatimazahra\\DW_AdventureWorks_EFM\\ssis-packages\\DW_SalesPerformance_ETL\\01_Load_Bronze.dtsx",
               "RelativeDocumentMoniker": "01_Load_Bronze.dtsx",
@@ -64,7 +64,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "03_Load_Gold.dtsx [Conception]",
               "DocumentMoniker": "C:\\Users\\fatimazahra\\DW_AdventureWorks_EFM\\ssis-packages\\DW_SalesPerformance_ETL\\03_Load_Gold.dtsx",
               "RelativeDocumentMoniker": "03_Load_Gold.dtsx",
@@ -76,7 +76,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "02_Load_Silver.dtsx [Conception]",
               "DocumentMoniker": "C:\\Users\\fatimazahra\\DW_AdventureWorks_EFM\\ssis-packages\\DW_SalesPerformance_ETL\\02_Load_Silver.dtsx",
               "RelativeDocumentMoniker": "02_Load_Silver.dtsx",
